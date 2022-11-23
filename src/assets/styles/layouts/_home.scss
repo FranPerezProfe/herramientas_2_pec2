@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 8rem;
+}
+
+body {
+  font-family: $font-family-serif;
+  min-width: 360px !important;
+  font-size: 18px;
+  color: $text-color;
+  background: $bg-color;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 1.6rem;
+  letter-spacing: 1.8px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.3rem;
+  letter-spacing: 1.3px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+@media (min-width: 576px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+hr {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/**
+  CONTENEDOR
+  ----------
+**/
+.container {
+  margin: 0 auto;
+  padding-right: 5px;
+  padding-left: 5px;
+  max-width: 100%;
+
+  @media (min-width: 576px) {
+    padding-right: 3%;
+    padding-left: 3%;
+  }
+}
+
+/**
+  FOOTER
+  ------
+**/
+
+footer {
+  margin-top: auto;
+  padding: 40px 0;
+  background: $bg-color-footer;
+  color: $text-color-footer;
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+.footer-menu-social {
+  ul {
+    display: flex;
+  }
+
+  li {
+    margin-left: 5px;
+  }
+
+  img {
+    width: 40px;
+  }
+}
+
+.footer-author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+/**
+  MAIN
+  ----
+**/
+
+/**
+  INDEX
+  -----
+**/
+
+#index h1 {
+  color: $index-title;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#index p {
+  color: $index-descriptions;
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+.poster-description {
+  text-align: justify;
+  margin: 0 10px;
+}
+
+.poster-date {
+  text-align: center;
+}
+
+#index img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@supports (display: grid) {
+  @media (min-width: 768px) {
+    #index h1 {
+      color: $index-title-grid;
+      padding: 20px;
+    }
+
+    #index p {
+      color: $index-descriptions-grid;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    #index img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .poster {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(10em, max-content));
+      grid-template-rows: 30vh repeat(3, fit-content(10em));
+    }
+
+    .poster-bg {
+      grid-column: 1 / 5;
+      grid-row: 1 / 5;
+    }
+
+    .poster h1 {
+      grid-column: 1 / 3;
+      grid-row: 1 / 2;
+      z-index: 2;
+      align-self: center;
+    }
+
+    .poster-description {
+      grid-column: 3 / 5;
+      grid-row: 2 / 4;
+      z-index: 2;
+      align-self: center;
+      padding: 15px;
+      margin: 0 15px;
+      background-color: $index-bg-descriptions-grid;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .poster-description p:first-of-type {
+      margin-bottom: 20px !important;
+    }
+
+    .poster-date {
+      grid-column: 2 / 4;
+      grid-row: 4 / 5;
+      z-index: 2;
+      text-transform: uppercase;
+      line-height: 1.5;
+      font-weight: 600;
+      text-align: center;
+      align-self: center;
+      border: 2px solid $index-title-grid;
+      border-radius: 5px;
+    }
+
+    .poster-date p:first-of-type {
+      font-size: 2rem !important;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    #index h1 {
+      font-size: 3rem;
+    }
+
+    #index p {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+/**
+  HEADER
+  ------
+**/
+
+header {
+  margin-bottom: 10px;
+}
+
+.navbar-brand__img {
+  max-width: 50px;
+
+  @media (min-width: 576px) {
+    max-width: 75px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 100px;
+  }
+}
