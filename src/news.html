@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>PEC1 - Herramientas HTML y CSS aula II</title>
+        <meta name="description" content="Desarrollo de la PEC1" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="./assets/styles/main.scss"
+        />
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="./assets/images/logoSmall.png"
+        />
+    </head>
+
+    <body>
+        <header class="container">
+            <nav class="navbar navbar-expand-md bg-white">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">
+                        <img
+                            class="navbar-brand__img"
+                            src="./assets/images/logo.png"
+                            alt="Foto de perfil"
+                        />
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="collapse navbar-collapse justify-content-end"
+                        id="navbarSupportedContent"
+                    >
+                        <ul class="navbar-nav">
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" href="members.html"
+                                    >Miembros</a
+                                >
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link active" href="news.html"
+                                    >Noticias</a
+                                >
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" href="online_festival.html"
+                                    >Festival online</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main id="news">
+            <img
+                class="news__img--mobile"
+                src="./assets/images/news/news11.jpg"
+                alt="Foto de noticia versión móvil"
+            />
+            <img
+                class="news__img--desktop"
+                src="./assets/images/news/news12.jpg"
+                alt="Foto de noticia versión escritorio y tableta"
+            />
+
+            <div class="news-info container">
+                <h2>
+                    Far far away, behind the word mountains, far from the
+                    countries Vokalia and Consonantia, there live the blind
+                    texts.
+                </h2>
+                <p>
+                    Far far away, behind the word mountains, far from the
+                    countries Vokalia and Consonantia, there live the blind
+                    texts. Separated they live in Bookmarksgrove right at the
+                    coast of the Semantics, a large language ocean. Far far
+                    away, behind the word mountains. Far far away, behind the
+                    word mountains, far from the countries Vokalia and
+                    Consonantia, there live the blind texts.
+                </p>
+
+                <blockquote>
+                    <p>
+                        Today, most NFTs are aesthetic. But there's a lot of
+                        innovation being done enabling dynamic utility of these
+                        assets that you can program.
+                    </p>
+                    <cite
+                        >Eric Anziani,
+                        <abbr title="Chief Operating Officer">COO</abbr> of
+                        Crypto.com</cite
+                    >
+                </blockquote>
+
+                <ul class="news-info__images">
+                    <li>
+                        Far far away, behind the word mountains, far from the
+                        countries Vokalia and Consonantia, there live the blind
+                        texts. Separated they live in Bookmarksgrove right at
+                        the coast of the Semantics.
+                    </li>
+                    <li>
+                        Far far away, behind the word mountains, far from the
+                        countries Vokalia and Consonantia, there live the blind
+                        texts. Separated they live in Bookmarksgrove right at
+                        the coast of the Semantics.
+                    </li>
+                    <li>
+                        Far far away, behind the word mountains, far from the
+                        countries Vokalia and Consonantia, there live the blind
+                        texts. Separated they live in Bookmarksgrove right at
+                        the coast of the Semantics.
+                    </li>
+                </ul>
+                <img
+                    src="./assets/images/news/news2.jpg"
+                    alt="Foto de noticias concierto en la calle"
+                />
+
+                <p>
+                    Far far away, behind the word mountains, far from the
+                    countries Vokalia and Consonantia, there live the blind
+                    texts. Separated they live in Bookmarksgrove right at the
+                    coast of the Semantics, a large language ocean. Far far
+                    away, behind the word mountains. Far far away, behind the
+                    word mountains, far from the countries Vokalia and
+                    Consonantia, there live the blind texts.
+                </p>
+
+                <div class="news-info__article-dj card mb-3">
+                    <div class="row g-0">
+                        <div class="col-lg-7">
+                            <img
+                                src="./assets/images/news/news3.jpg"
+                                alt="Foto Dj"
+                            />
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="card-body">
+                                <p>
+                                    Far far away, behind the word mountains, far
+                                    from the countries Vokalia and Consonantia,
+                                    there live the blind texts. Separated they
+                                    live in Bookmarksgrove right at the coast of
+                                    the Semantics, a large language ocean. Far
+                                    far away, behind the word mountains. Far far
+                                    away, behind the word mountains, far from
+                                    the countries Vokalia and Consonantia, there
+                                    live the blind texts.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p>
+                    Far far away, behind the word mountains, far from the
+                    countries Vokalia and Consonantia, there live the blind
+                    texts. Separated they live in Bookmarksgrove right at the
+                    coast of the Semantics, a large language ocean. Far far
+                    away, behind the word mountains. Far far away, behind the
+                    word mountains, far from the countries Vokalia and
+                    Consonantia, there live the blind texts.
+                </p>
+            </div>
+        </main>
+
+        <include src="./views/footer.html"></include>
+        <script type="module" src="./assets/scripts/main.js"></script>
+    </body>
+</html>

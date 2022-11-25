@@ -10,29 +10,14 @@
             type="text/css"
             href="./assets/styles/main.scss"
         />
-        <script type="module" src="./assets/scripts/main.js"></script>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="./assets/images/logoSmall.png"
+        />
     </head>
 
     <body>
-        <!--<header>
-      <div class="container">
-        <div class="header-profile">
-          <img
-            class="header-profile__img"
-            src="./assets/images/logo.png"
-            alt="Foto de perfil"
-          />
-          <div class="header-profile__info">
-            <h1>Francisco Javier Pérez Arribas</h1>
-            <p>
-              Ingeniero Informático y Profesor de informática en la Consejería
-              de Educacion de Castilla y León.
-            </p>
-          </div>
-        </div>
-      </div>
-    </header>-->
-
         <header class="container">
             <nav class="navbar navbar-expand-md bg-white">
                 <div class="container">
@@ -60,16 +45,19 @@
                     >
                         <ul class="navbar-nav">
                             <li class="nav-item mx-3">
-                                <a class="nav-link active" href="#">Pagina 1</a>
+                                <a class="nav-link" href="members.html"
+                                    >Miembros</a
+                                >
                             </li>
                             <li class="nav-item mx-3">
-                                <a class="nav-link active" href="#">Pagina 2</a>
+                                <a class="nav-link" href="news.html"
+                                    >Noticias</a
+                                >
                             </li>
                             <li class="nav-item mx-3">
-                                <a class="nav-link active" href="#">Pagina 3</a>
-                            </li>
-                            <li class="nav-item mx-3">
-                                <a class="nav-link active" href="#">Pagina 4</a>
+                                <a class="nav-link" href="online_festival.html"
+                                    >Festival online</a
+                                >
                             </li>
                         </ul>
                     </div>
@@ -79,17 +67,18 @@
 
         <main id="index">
             <div class="poster">
-                <h1>Tributo a la música</h1>
                 <img
                     class="poster-bg"
                     src="assets/images/portadaBG.jpg"
                     alt="Imagen portada de fondo"
                 />
+                <h1>Tributo a la música</h1>
                 <div class="poster-description">
                     <p>Festival para todos los amantes de la música.</p>
                     <p>
-                        Se desarrollarán una serie de conciertos de todos los
-                        géneros para el disfrute de todos los invitados.
+                        Concierto inolvidable. Todos los miembros unidos en un
+                        último concierto para el deleite de todos sus fans.
+                        ¡Anímate!
                     </p>
                 </div>
 
@@ -100,44 +89,8 @@
             </div>
         </main>
 
-        <footer>
-            <div class="container">
-                <div class="footer-menu">
-                    <img
-                        class="footer-menu__img"
-                        src="./assets/images/logo.png"
-                        alt="Logo"
-                    />
-
-                    <div class="footer-menu-social">
-                        <ul>
-                            <li>
-                                <img
-                                    src="./assets/images/social/facebook.png"
-                                    alt="Facebook"
-                                />
-                            </li>
-                            <li>
-                                <img
-                                    src="./assets/images/social/linkedin.png"
-                                    alt="Linkedin"
-                                />
-                            </li>
-                            <li>
-                                <img
-                                    src="./assets/images/social/twitter.png"
-                                    alt="Twitter"
-                                />
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <hr />
-                <div class="footer-author">
-                    <p>Herramientas HTML y CSS aula II</p>
-                    <p>2022 &copy; Francisco Javier Pérez Arribas</p>
-                </div>
-            </div>
-        </footer>
+        <include src="./views/footer.html"></include>
+        <script type="module" src="./assets/scripts/main.js"></script>
+        <!-- do not remove this line! -->
     </body>
 </html>
