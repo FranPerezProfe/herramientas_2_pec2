@@ -74,6 +74,17 @@ main {
   background: $bg-color;
 }
 
+.references {
+  font-size: 0.9rem;
+  color: $references-color !important;
+  text-align: end !important;
+  margin-right: 10px;
+}
+
+.references::before {
+  content: "*";
+}
+
 /**
   CONTENEDOR
   ----------
@@ -188,6 +199,17 @@ footer {
 
   .poster-date {
     text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    line-height: 1.5;
+    font-weight: 600;
+    border: 2px solid $index-title-grid;
+    border-radius: 5px;
+
+    @media (max-width: 768px) {
+      max-width: 70%;
+      margin: 10px auto;
+    }
   }
 }
 
@@ -197,7 +219,7 @@ footer {
       height: 70vh;
 
       h1 {
-        color: $index-title-grid;
+        color: $index-title-grid-desktop;
         padding: 20px;
       }
 
@@ -211,68 +233,142 @@ footer {
       img {
         height: 100%;
       }
-    }
 
-    .poster {
-      width: 100vw;
-      height: 100%;
-      display: grid;
-      grid-template-columns: minmax(min-content, 1fr) minmax(15em, max-content) repeat(2, minmax(10em, 1fr));
-      grid-template-rows: repeat(3, 1fr) minmax(10em, 2fr);
-      row-gap: 10px;
-    }
+      .poster {
+        width: 100vw;
+        height: 100%;
+        display: grid;
+        grid-template-columns: minmax(min-content, 1fr) minmax(15em, max-content) repeat(2, minmax(10em, 1fr));
+        grid-template-rows: repeat(3, 1fr) minmax(10em, 2fr);
+        row-gap: 10px;
 
-    .poster-bg {
-      grid-column: 1 / 5;
-      grid-row: 1 / 5;
-    }
+        h1 {
+          grid-column: 1 / 3;
+          grid-row: 1 / 2;
+        }
+      }
 
-    .poster h1 {
-      grid-column: 1 / 3;
-      grid-row: 1 / 2;
-    }
+      .poster-bg {
+        grid-column: 1 / 5;
+        grid-row: 1 / 5;
+      }
 
-    .poster-description {
-      grid-column: 3 / 5;
-      grid-row: 2 / 4;
-      align-self: center;
-      padding: 15px;
-      margin: 0 15px;
-      background-color: $index-bg-descriptions-grid;
-      border-radius: 5px;
-      text-align: center;
-    }
+      .poster-description {
+        grid-column: 3 / 5;
+        grid-row: 2 / 4;
+        align-self: center;
+        padding: 15px;
+        margin: 0 15px;
+        background-color: $index-bg-descriptions-grid;
+        border-radius: 5px;
+        text-align: center;
+      }
 
-    .poster-description p:first-of-type {
-      margin-bottom: 20px !important;
-    }
+      .poster-description p:first-of-type {
+        margin-bottom: 20px !important;
+      }
 
-    .poster-date {
-      grid-column: 2 / 3;
-      grid-row: 4 / 5;
-      text-transform: uppercase;
-      line-height: 1.5;
-      font-weight: 600;
-      text-align: center;
-      align-self: center;
-      border: 2px solid $index-title-grid;
-      border-radius: 5px;
-      padding: 10px;
-    }
+      .poster-date {
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
+        align-self: center;
+        border: 2px solid $index-title-grid-desktop !important;
+        padding: 10px;
+      }
 
-    .poster-date p:first-of-type {
-      font-size: 2rem !important;
+      .poster-date p:first-of-type {
+        font-size: 2rem !important;
+      }
+      @media (min-width: 1200px) {
+        h1 {
+          font-size: 3rem;
+        }
+
+        p {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+/**
+  NEWS
+  ----
+**/
+
+#news {
+  img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    color: $news-title-color;
+  }
+  p,
+  li {
+    color: $news-description-color;
+    text-align: justify;
+  }
+
+  .container {
+    padding-right: 5%;
+    padding-left: 5%;
+
+    @media (min-width: 1200px) {
+      padding-right: 10%;
+      padding-left: 10%;
     }
   }
 
-  @media (min-width: 1200px) {
-    #index {
-      h1 {
-        font-size: 3rem;
+  .news__img--desktop {
+    display: none;
+  }
+
+  @media (min-width: 576px) {
+    .news__img--mobile {
+      display: none;
+    }
+    .news__img--desktop {
+      display: inline;
+    }
+  }
+
+  .news-info {
+    blockquote {
+      width: 80%;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      margin-left: auto;
+      padding: 15px 30px;
+      background-color: $text-color-footer;
+      border-right: 4px solid $bg-color-footer;
+      text-align: right;
+    }
+
+    &__images {
+      li {
+        position: relative;
+        padding-left: 30px;
+        margin-top: 10px;
       }
 
-      p {
-        font-size: 1.5rem;
+      li::before {
+        display: inline-block;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        position: absolute;
+        left: 0;
+        top: 5px;
+        font: var(--fa-font-solid);
+        content: "\f001";
+      }
+    }
+
+    &__article-dj {
+      img {
+        margin-bottom: 0;
       }
     }
   }
@@ -335,6 +431,14 @@ footer {
         border: 2px solid $members-description-line;
         padding: 6px;
         border-radius: 5px;
+
+        @media (min-width: 576px) {
+          min-height: 300px;
+        }
+
+        @media (min-width: 1400px) {
+          min-height: 260px;
+        }
       }
     }
 
@@ -345,85 +449,50 @@ footer {
 }
 
 /**
-  NEWS
-  ----
+  ONLINE
+  ------
 **/
 
-#news {
-  img {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  h2 {
-    color: $news-title-color;
-  }
-  p,
-  li {
-    color: $news-description-color;
-    text-align: justify;
-  }
-
-  .container {
-    padding-right: 5%;
-    padding-left: 5%;
+#online {
+  #carouselBandas {
+    margin: auto;
+    max-width: 100%;
 
     @media (min-width: 1200px) {
-      padding-right: 10%;
-      padding-left: 10%;
+      max-width: 60%;
     }
   }
-
-  .news__img--desktop {
-    display: none;
+  h1 {
+    margin-top: 30px;
+    margin-top: 20px;
+    color: $news-title-color;
   }
 
-  @media (min-width: 576px) {
-    .news__img--mobile {
-      display: none;
-    }
-    .news__img--desktop {
-      display: inline;
-    }
-  }
+  .online-concert {
+    padding: 0;
+    width: 100%;
+    position: relative;
+    display: block;
+    margin: 30px auto;
 
-  .news-info {
-    &__images {
-      li {
-        position: relative;
-        padding-left: 30px;
-        margin-top: 10px;
-      }
-
-      li::before {
-        content: "";
-        width: 20px;
-        height: 20px;
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        position: absolute;
-        left: 0;
-        top: 5px;
-      }
-
-      li:nth-child(1)::before {
-        background-image: url("/src/assets/images/icons/music-icon1.svg");
-      }
-
-      li:nth-child(2)::before {
-        background-image: url("/src/assets/images/icons/music-icon2.svg");
-      }
-
-      li:nth-child(3)::before {
-        background-image: url("/src/assets/images/icons/music-icon3.svg");
-      }
+    @media (min-width: 768px) {
+      width: 80%;
     }
 
-    &__article-dj {
-      img {
-        margin-bottom: 0;
-      }
+    &::before {
+      display: block;
+      content: "";
+      padding-top: 56.25%;
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
   }
 }
